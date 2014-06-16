@@ -12,9 +12,12 @@ Changelog
 Dependencies
 ------------
 
+### All
 - Node.JS
 - Bower
-
+- 
+### Windows Requirements
+- Microsoft Visual Studio (https://github.com/TooTallNate/node-gyp#installation)
 
 Installation
 ------------
