@@ -18,8 +18,8 @@ var spd = config.ShadowplayDirectory;
 
 app.set('view engine', 'hbs');
 app.set('json spaces', 4);
-app.use(express.static('public'))
-app.use(logger())
+app.use(express.static('public'));
+app.use(logger());
 
 hbs.registerHelper('string', function(object) {
   return JSON.stringify(object);
@@ -33,16 +33,16 @@ function fetchGame(game, cb) {
       return cb(JSON.parse(res));
     } else {
       var root = 'http://www.giantbomb.com/api/';
-      var list = root + 'search?api_key=' + apikey + '&format=json&query=' + game + '&resources=game'
+      var list = root + 'search?api_key=' + apikey + '&format=json&query=' + game + '&resources=game';
       request.get(list, function(e, r, b) {
         var single = JSON.parse(b);
-        single = single.results[0].api_detail_url
+        single = single.results[0].api_detail_url;
         request.get(single + '?format=json&api_key=' + apikey, function(e, r, b) {
           db.put(game, b, function(err) {
             if (err) throw err;
           });
           return cb(JSON.parse(b));
-        })
+        });
       });
     }
   });
@@ -84,7 +84,7 @@ app.get('/games/:game', function(req, res) {
         videos: videos,
         data: gameData.results
       });
-    })
+    });
   } else {
     res.send(404);
   }
@@ -98,7 +98,7 @@ app.get('/games/:game/:video', function(req, res) {
     game: game,
     video: video,
     path: path
-  })
+  });
 });
 
 app.get('/videos/:video', function(req, res) {
