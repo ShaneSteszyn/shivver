@@ -9,6 +9,7 @@ var hbs = require('hbs');
 var fs = require('fs');
 var request = require('request');
 var _path = require('path');
+var compression = require('compression');
 var levelup = require('levelup'),
   db = levelup('./db');
 
@@ -20,7 +21,7 @@ var spd = config.ShadowplayDirectory;
 app.set('view engine', 'hbs');
 app.set('json spaces', 4);
 app.use(logger());
-app.use(express.compress());
+app.use(compression());
 app.use(express.static('public'));
 
 hbs.registerHelper('string', function(object) {

@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/trevorstarick/shivver",
   "dependencies": {
+    "compression": "^1.0.7",
     "express": "^4.4.3",
     "hbs": "^2.7.0",
     "leveldown": "^0.10.2",
