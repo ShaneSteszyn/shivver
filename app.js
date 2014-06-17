@@ -106,7 +106,8 @@ app.get('/games/:game/:video', function(req, res) {
 
 app.get('/videos/:video', function(req, res) {
   var video = decodeURI(req.params.video);
-  var game = video.split(' ')[0];
+  var game = video.split('.')[0];
+  game = game.substring(0, game.length - 3);
   var path = _path.resolve(spd + '/' + game + '/' + video);
   res.sendfile(path);
 });
