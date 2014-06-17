@@ -8,6 +8,7 @@ var http = require('http').Server(app);
 var hbs = require('hbs');
 var fs = require('fs');
 var request = require('request');
+var _path = require('path');
 var levelup = require('levelup'),
   db = levelup('./db');
 
@@ -105,7 +106,7 @@ app.get('/videos/:video', function(req, res) {
   var video = decodeURI(req.params.video);
   var game = video.split(' ')[0];
   var path = spd + '/' + game + '/' + video;
-  res.sendfile(path);
+  res.sendfile(_path.resolve(path));
 });
 
 http.listen(3000);
