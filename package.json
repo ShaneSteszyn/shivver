@@ -1,7 +1,7 @@
 {
   "name": "shivver",
-  "version": "1.0.0",
-  "description": "Think of it as Steam meets Sickbeard.",
+  "version": "0.0.1",
+  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,25 +10,10 @@
     "type": "git",
     "url": "https://github.com/trevorstarick/shivver.git"
   },
-  "keywords": [
-    "Steam",
-    "Shadowplay",
-    "nVidia",
-    "Sickbeard"
-  ],
-  "author": "Trevor Starick",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/trevorstarick/shivver/issues"
   },
-  "homepage": "https://github.com/trevorstarick/shivver",
-  "dependencies": {
-    "compression": "^1.0.7",
-    "express": "^4.4.3",
-    "hbs": "^2.7.0",
-    "leveldown": "^0.10.2",
-    "levelup": "^0.18.3",
-    "morgan": "^1.1.1",
-    "request": "^2.36.0"
-  }
+  "homepage": "https://github.com/trevorstarick/shivver"
 }
