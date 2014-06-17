@@ -19,8 +19,9 @@ var spd = config.ShadowplayDirectory;
 
 app.set('view engine', 'hbs');
 app.set('json spaces', 4);
-app.use(express.static('public'));
 app.use(logger());
+app.use(express.compress());
+app.use(express.static('public'));
 
 hbs.registerHelper('string', function(object) {
   return JSON.stringify(object);
@@ -105,8 +106,8 @@ app.get('/games/:game/:video', function(req, res) {
 app.get('/videos/:video', function(req, res) {
   var video = decodeURI(req.params.video);
   var game = video.split(' ')[0];
-  var path = spd + '/' + game + '/' + video;
-  res.sendfile(_path.resolve(path));
+  var path = _path.resolve(spd + '/' + game + '/' + video);
+  res.sendfile(path);
 });
 
 http.listen(3000);

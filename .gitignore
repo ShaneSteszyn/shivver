@@ -1,3 +1,4 @@
 db/*
 Shadowplay/*
 node_modules/*
+config.json
